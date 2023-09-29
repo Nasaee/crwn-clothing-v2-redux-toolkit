@@ -1,9 +1,14 @@
-import { CART_ACTION_TYPES } from './cart.types';
+import { createSlice } from '@reduxjs/toolkit';
 
 const CART_INITIAL_STATE = {
   isCartOpen: false,
   cartItems: [],
 };
+
+export const cartSlice = createSlice({
+  name: 'cart',
+  initialState: CART_INITIAL_STATE,
+});
 
 export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
   const { type, payload } = action;
